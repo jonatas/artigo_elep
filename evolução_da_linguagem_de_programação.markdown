@@ -1,0 +1,37 @@
+## Evolução da linguagem de programação
+   A evolução dos computadores trouxe dispositivos menores e mais potentes. Na década de 80, usavam-se grandes computadores para realizar pequenos processos, 30 anos mais tarde estes dispositivos ganharam poder, velocidade, design e com baixo consumo de energia. Dispositivos que cabem na palma da mão, com apenas alguns toques ou cliques tornam acessível a informação desejada. 
+   Da mesma forma como os computadores ganharam potência, as linguagens de programação se tornaram expressivas e humanas. Este dinâmismo não tem o objetivo de trazer conforto a máquina, mas sim ao seu manipulador - o homem. 
+   A linguagem de computador, inicialmente era grosseira e de difícil compreensão, com o passar do tempo, as técnicas foram evoluindo e a linguagem, mesmo de computador, foi ganhando forma e expressão. Houve uma percepção de mudança, que tornaria a linguagem de programação uma auxiliadora do programador e não uma interpretadora.
+
+### Exemplo 'Hello world'
+
+   O programa Hello world é o programa mais conhecido no mundo inteiro e é o exemplo mais básico de uma linguagem de programação com o objetivo de imprimir a mensagem "Hello, world!" e guiar o iniciante em sua primeira compilação/execução de um programa de computador. Abaixo seguem dois exemplos "Hello, world" em duas linguagens de programação distintas: asssembly e ruby.
+
+
+#### Listagem 1.1: Exemplo de um programa que imprime a mensagem 'Hello, world!' usando a linguagem de programação assembly:
+<source>
+   variable:
+      .message   db   "Hello world!$"
+   code:
+      mov  ah,9
+      mov  dx,offset .message
+      int  0x21
+      ret
+</source>
+
+   Analisando a listagem 1.1 vemos que possuem muitas palavras (comandos, declarações) desconhecidas, e  com pouca aparência semântica. Isto acontece devido ao tipo de compilador (de linguagem compilada) e o nível de acesso as complexidades do hardware do computador. 
+
+#### Listagem 1.2: Exemplo de um programa que imprimi a mensagem 'Hello, world!' usando a linguagem de programação ruby:
+<code syntax="ruby">
+   print "Hello, world!"
+</code>
+
+   Foi necessário apenas uma linha de código para representar o mesmo exemplo na linguagem ruby. No exemplo mais simples o objetivo é apenas imprimir "Hello, world!" e é exatamente isso que está escrito. Diferente de assembly, ruby não é uma linguagem compilada e sim dinâmica. Assim, tudo acontece em tempo real, enquanto está sendo executado.
+   
+   Tradução da listagem 1.2
+
+   imprima "Olá mundo!"
+
+   Apenas com uma linha de código é possível fazer exatamente o que está sendo proposto. Este programa de computador foi escrito de forma simples e humanamente legível, diferente da primeira instrução de máquina escrita em assembly. No decorrer deste artigo serão abordados outros exemplos de programação como este, que, com poucas palavras expressa exatamente o objetivo do software no domínio em questão.
+   Exemplos como este, mostram o poder do homem de categorizar e generalizar as informações. Desta forma a percepção mudou de, programar para o computador para programar para as outras pessoas. Anteriormente, com uma programação rígida e a escassez de processamento, a codificação de um software realmente fazia parte de um processo árduo e lento, aonde não era possível tornar agradável a leitura de uma instrução de computador.
+

@@ -1,6 +1,6 @@
 #!/opt/local/bin/ruby1.8.7
 require 'rubygems'
-require 'redcloth'
+require 'RedCloth'
 require 'coderay'
 require 'redclothcoderay'
 
@@ -10,8 +10,8 @@ Template = %{
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
   <head>
   <title>%s</title>
-  <link href="Article.css" media="all" rel="Stylesheet" type="text/css" />
-  <link href="coderay.css" media="all" rel="Stylesheet" type="text/css" />
+  <link href="article.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="coderay.css" media="all" rel="stylesheet" type="text/css" />
   </head>
   <body>
   %s
@@ -19,11 +19,13 @@ Template = %{
 </html>
 }
 
-file = ARGV.shift
+arquivo = ARGV.shift
+titulo = arquivo.gsub(/\.markdown$/,'').tr('_',' ')
+
 begin
   $stdout.puts(Template % [
-                 file.gsub(/\.markdown$/,''), 
-                 RedCloth::new(IO.read(file)).to_html( :markdown, :ruby)
+                 titulo, 
+                 RedCloth::new(IO.read(arquivo)).to_html( :markdown, :ruby)
                ])
 rescue
 	$stderr.puts "Abortando: Erro Fatal: %s \n %s", $!,$@

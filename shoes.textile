@@ -15,6 +15,6 @@ Este programa foi escrito em uma linguagem chamada Ruby. Quando as linhas acima 
 
 Shoes roda na maioria das plataformas operacionais. Isto é ótimo pois é possível escrever apenas uma vez e usar no Linux, Mac OS X, Windows e muitos outros.
 
-![exemplo rodando apartir do manual](shoes_hello_world.png "exemplo rodando no mac")
+!shoes_hello_world.png(exemplo rodando no mac)!
  
 

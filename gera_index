@@ -1,0 +1,3 @@
+#!/bin/sh
+rm -f index.textile
+cat *.textile > index.textile

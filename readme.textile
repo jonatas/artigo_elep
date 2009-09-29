@@ -1,20 +1,6 @@
-h1. Expressão da Linguagem enquanto programando
+h1. Teoria da linguagem
 
-h2. Teoria da linguagem 
-
-Linguagem é qualquer e todo sistema de signos que serve de meio de comunicação de idéias ou sentimentos através de signos convencionais, sonoros, gráficos, gestuais etc., podendo ser percebida pelos diversos órgãos dos sentidos, o que leva a distinguirem-se várias espécies de linguagem: visual, auditiva, tátil, etc., ou, ainda, outras mais complexas, constituídas, ao mesmo tempo, de elementos diversos.[1][2] Os elementos constitutivos da linguagem são, pois, gestos, sinais, sons, símbolos ou palavras, usados para representar conceitos de comunicação, idéias, significados e pensamentos. Embora os animais também se comuniquem, a linguagem propriamente dita pertence apenas ao Homem.[3] fonte(http://pt.wikipedia.org/wiki/Linguagem) 
-
-h2. A evolução das linguagens de programação
- 
-h2. A linguagem ruby - `print "hello world"`
-
-h2. DSL - Domínio específico da linguagem
-
-h2. Exemplos práticos de expressividade da linguagem em domínios específicos
-
-h2. Active Record - abstração do modelo objeto-relacional
-
-h2. Shoes - ferramenta para construção de interfaces desktop usando componentes nativos do sistema operacional
+Linguagem é qualquer e todo sistema de signos que serve de meio de comunicação de idéias ou sentimentos através de signos convencionais, sonoros, gráficos, gestuais etc., podendo ser percebida pelos diversos órgãos dos sentidos, o que leva a distinguirem-se várias espécies de linguagem: visual, auditiva, tátil, etc., ou, ainda, outras mais complexas, constituídas, ao mesmo tempo, de elementos diversos.12 Os elementos constitutivos da linguagem são, pois, gestos, sinais, sons, símbolos ou palavras, usados para representar conceitos de comunicação, idéias, significados e pensamentos. Embora os animais também se comuniquem, a linguagem propriamente dita pertence apenas ao Homem.3 fonte(http://pt.wikipedia.org/wiki/Linguagem)
 h1. Evolução da linguagem de programação
 
 A evolução dos computadores trouxe dispositivos menores e mais potentes. Na década de 80, usavam-se grandes computadores para realizar pequenos processos, 30 anos mais tarde estes dispositivos ganharam poder, velocidade, design e com baixo consumo de energia. Dispositivos que cabem na palma da mão, com apenas alguns toques ou cliques tornam acessível a informação desejada. 
@@ -67,16 +53,82 @@ h2. O que é Shoes?
 
 Shoes é um framework para a construção de interfaces rápidas. Shoes nasceu pra ser fácil. Realmente Feito para iniciantes absolutos. Com esta ferramenta é realmente fácil de fazer interfaces e artes gráficas. 
 
-h2. Primeiro Exemplo
+h2. Primeiro Exemplo - janela com botão
+
+Este é um dos exemplos mais simples do shoes. 
 
 <source:ruby>
-Shoes.app { button("clique aqui!") { alert("bom trabalho.") } } 
+Shoes.app { button("Click me!") { alert("Good job.") } } 
 </source>
 
 
-Este programa foi escrito em uma linguagem chamada Ruby. Quando as linhas acima forem lidas, uma janela irá aparecer com um botão dizendo "clique aqui!" e quando o botão for clicado, uma mensagem irá aparecer: "Bom trabalho".
+Este programa foi escrito em uma linguagem chamada Ruby. Consiste em uma janela com um botão. Quando o botão for clicado ela deverá responder por: "Good job." ou seja "Bom trabalho."
+
 Shoes roda na maioria das plataformas operacionais. Isto é ótimo pois é possível escrever apenas uma vez e usar no Linux, Mac OS X, Windows e muitos outros.
 
 !shoes_hello_world.png(exemplo rodando no Mac OS X)!
- 
 
+h2. Segundo Exemplo - um bloco de notas
+
+Como próximo exemplo, será progamado um bloco de notas que possa apagar e inserir novas notas em uma janela. O programa será composto por:
+** uma janela com um título "Minhas Notas", tamanho 300 pixels. E dentro desta janela terá:
+*** uma linha de edição para escrever a nota
+*** um botão para adicionar a anotação que quando for clicado deve:
+**** adicionar o que foi escrito na linha de edição para as notas abaixo listadas
+**** limpar o texto da linha de edição da nota
+*** uma lista de notas que deve conter
+**** a nota e um link para remover a nota
+
+| !shoes_bloco_de_notas_executando.jpg(Exemplo de um simples bloco de notas)!  | !shoes_bloco_de_notas_codigo.jpg(Exemplo de um simples bloco de notas)! |
+
+
+Conforme o exemplo da imagem e o código, ambos complementam o requisito acima descrito:
+
+!shoes_bloco_de_notas_codigo_comentado.jpg(Código fonte do bloco de notas com os comentários conforme a especificação)! |
+
+
+h2. Funcionamento do framework
+
+Como descrito na primeira linha de código do exemplo anterior, o framework é declarado, contendo uma janela principal. Esta janela, recebe um título e um tamanho inicial.
+A declaração:
+<source:ruby>
+Shoes.app
+</source>
+é básicamente uma janela empilhadora de objetos com suas definições específicas de janela. Este objeto pode encaixar muitos outros componentes internamente. Também é possível manipular elementos de fora para dentro, e de dentro para fora, fazendo com que um bloco interfira no outro sem dificuldades.
+
+* Um bloco de código usando a linguagem de programação ruby pode ser declarado com as seguintes sintaxes:
+
+** Bloco usando do ; end
+<source:ruby>
+do
+// o código fonte vai aqui no meio
+end
+</source>
+
+** Bloco usando chaves
+
+<source:ruby>
+{ // o código fonte vai aqui no meio }
+</source>
+
+Desta forma sabe-se que não existe diferença entre usar blocos com palavras (do;end) ou chaves `{}`
+
+Como o exemplo acima mostra, o framework Shoes basicamente é uma pilha de componentes, podendo adicionar, empilhar e remover elementos com facilidade e clareza. Estes elementos quando empilhados, podem interagir apenas empilhados ou empilhados e aninhados a outras pilhas de elementos. 
+
+<source:ruby>Shoes.app :title => "Minhas Notas", :width => 480</source>
+
+Estes parâmetros como título(:title) e tamanho(:width) são pertencentes a janela principal do aplicativo, e podem ser acompanhados de outros como bloqueio de redimensionamento de janela(:resizable => false).
+
+
+h1. O QUE FALTA NA ESTRUTURA DO ARTIGO 
+h2. Teoria da linguagem 
+
+Linguagem é qualquer e todo sistema de signos que serve de meio de comunicação de idéias ou sentimentos através de signos convencionais, sonoros, gráficos, gestuais etc., podendo ser percebida pelos diversos órgãos dos sentidos, o que leva a distinguirem-se várias espécies de linguagem: visual, auditiva, tátil, etc., ou, ainda, outras mais complexas, constituídas, ao mesmo tempo, de elementos diversos.[1][2] Os elementos constitutivos da linguagem são, pois, gestos, sinais, sons, símbolos ou palavras, usados para representar conceitos de comunicação, idéias, significados e pensamentos. Embora os animais também se comuniquem, a linguagem propriamente dita pertence apenas ao Homem.[3] fonte(http://pt.wikipedia.org/wiki/Linguagem) 
+
+h2. A linguagem ruby - `print "hello world"`
+
+h2. DSL - Domínio específico da linguagem
+
+h2. Exemplos práticos de expressividade da linguagem em domínios específicos
+
+h2. Active Record - abstração do modelo objeto-relacional

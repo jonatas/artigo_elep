@@ -1,5 +1,5 @@
 # uma janela com um título "Minhas Notas", tamanho 300 pixels. E dentro desta janela terá:
-Shoes.app :title => "Minhas Notas", :width => 300  do 
+Shoes.app :title => "Minhas Notas", :width => 300, :resizable => false do 
   # uma linha de edição para escrever a nota
   @anotacao = edit_line
 

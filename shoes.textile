@@ -5,16 +5,40 @@ h2. O que é Shoes?
 
 Shoes é um framework para a construção de interfaces rápidas. Shoes nasceu pra ser fácil. Realmente Feito para iniciantes absolutos. Com esta ferramenta é realmente fácil de fazer interfaces e artes gráficas. 
 
-h2. Primeiro Exemplo
+h2. Primeiro Exemplo - janela com botão
+
+Este é um dos exemplos mais simples do shoes. 
 
 <source:ruby>
-Shoes.app { button("clique aqui!") { alert("bom trabalho.") } } 
+Shoes.app { button("Click me!") { alert("Good job.") } } 
 </source>
 
 
-Este programa foi escrito em uma linguagem chamada Ruby. Quando as linhas acima forem lidas, uma janela irá aparecer com um botão dizendo "clique aqui!" e quando o botão for clicado, uma mensagem irá aparecer: "Bom trabalho".
+Este programa foi escrito em uma linguagem chamada Ruby. Consiste em uma janela com um botão. Quando o botão for clicado ela deverá responder por: "Good job." ou seja "Bom trabalho."
+
 Shoes roda na maioria das plataformas operacionais. Isto é ótimo pois é possível escrever apenas uma vez e usar no Linux, Mac OS X, Windows e muitos outros.
 
 !shoes_hello_world.png(exemplo rodando no Mac OS X)!
- 
+
+h2. Segundo Exemplo - um bloco de notas
+
+Como próximo exemplo, será progamado um bloco de notas que possa apagar e inserir novas notas em uma janela. O programa será composto por:
+** uma janela com um título "Minhas Notas", tamanho 300 pixels. E dentro desta janela terá:
+*** uma linha de edição para escrever a nota
+*** um botão para adicionar a anotação que quando for clicado deve:
+**** adicionar o que foi escrito na linha de edição para as notas abaixo listadas
+**** limpar o texto da linha de edição da nota
+*** uma lista de notas que deve conter
+**** a nota e um link para remover a nota
+
+| !shoes_bloco_de_notas_executando.jpg(Exemplo de um simples bloco de notas)!  | !shoes_bloco_de_notas_codigo.jpg(Exemplo de um simples bloco de notas)! |
+
+
+Conforme o exemplo da imagem e o código, ambos complementam o requisito acima descrito:
+
+!shoes_bloco_de_notas_codigo_comentado.jpg(Código fonte do bloco de notas com os comentários conforme a especificação)! |
+
+
+
+
 

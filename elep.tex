@@ -1,4 +1,3 @@
-
 \documentclass[12pt]{article}
 %\documentclass{abnt}
 
@@ -13,7 +12,7 @@
 % \usepackage{abntex}
 
 %\citeoption{abnt-full-initials=yes}
-\lstset{language=ruby,caption=Código Ruby,label=Ruby, numbers=left} 
+\lstset{language=ruby,caption=Código Ruby,label=Ruby, numbers=left, frame=single} 
 
 \title{Expressividade da linguagem enquanto programando}
 
@@ -52,8 +51,9 @@ Uma linguagem tem os seus limites, na maioria dos casos é formal e burocrático
 
 \subsubsection {Exemplo usando a linguagem de programação assembly}
 
-\begin{lstlisting}[caption=Exemplo em assembly]
+Assembly ou Assembler é uma notação escrita por humanos que permite escrever instrução de máquina de forma mais fácil. Assembly paga o preço da complexidade pelo reduzido número de comandos e opções.
 
+\begin{lstlisting}[label=exemplo em assembly,caption=Exemplo em assembly]
    variable:
       .message   db   "Hello world!\$"
    code:
@@ -61,16 +61,18 @@ Uma linguagem tem os seus limites, na maioria dos casos é formal e burocrático
       mov  dx,offset .message
       int  0x21
       ret
-
 \end{lstlisting}
 
-Analisando a listagem 1.1 vemos que possuem muitas palavras (comandos, declarações) desconhecidas, e  com pouca aparência semântica. Isto acontece devido ao tipo de compilador (de linguagem compilada) e o nível de acesso as complexidades do hardware do computador. 
+Sem dificuldades, a listagem acima \ref{exemplo em assembly} demonstra-se complexa. Apenas para imprimir uma frase foram necessários 6 linhas. Essa declaração não tão amigável é usada para realizar o mesmo objetivo do comanddo abaixo \ref{exemplo hello world ruby}, apenas estão escritas de forma diferente. O fato é que os compiladores exigem uma quantidade mínima de declarações para que possa compilar e executar.
+
 
 \subsubsection {Exemplo usando a linguagem de programação ruby}
 
 \begin{lstlisting}[caption=Exemplo em ruby]
    print "Hello, world!"
 \end{lstlisting}
+
+ Ruby demonstra-se mais simples nestas exigências, é possível compilar apenas uma expressão, não precisando de declarações e nem padrões repetitivos. O código possuí apenas o comando de impressão e a frase que deseja ser impressa.
 
 \subsection { A simplicidade da linguagem }
 
@@ -84,16 +86,19 @@ Apenas com uma linha de código é possível fazer exatamente o que está sendo 
 Exemplos como este, mostram o poder do homem de categorizar e generalizar as informações. Desta forma a percepção mudou de, programar para o computador para programar para as outras pessoas. Anteriormente, com uma programação rígida e a escassez de processamento, a codificação de um software realmente fazia parte de um processo árduo e lento, aonde não era possível tornar agradável a leitura de uma instrução de computador.
 
 
-
 \section { A linguagem ruby }
 
 Ruby é uma linguagem dinâmica, open source com foco na simplicidade e produtividade. Tem uma sintaxe elegante de leitura natural e fácil escrita. Com um grande número de bibliotecas disponíveis gratuitamente (gems), tem atraído muita gente para desenvolver nesta linguagem.
 
 Para usar no Mac OS X ou Linux, é necessário abrir o {terminal} e  no Windows pode-se usar o Command-DOS e após isso digitar ruby para invocar o compilador, irb para iniciar uma interação.
 
+\subsection { A burocracia da linguagem }
+
+Declarar e inicializar variáveis, importar pacotes, classes finais e fechadas 
+
 \subsection { O compilador ruby }
 
-O compilado pode ser invocado usando a linha de comando e receber uma código para compilar"
+O compilado pode ser invocado usando a linha de comando e receber código por parâmetro compilar
 
 \begin{lstlisting}[caption=Usando o compilador na linha de comando]
 jonatas@xonatax-mac:~$ ruby -e "puts 1+2"
@@ -229,7 +234,7 @@ class Pessoa
 end
 \end{lstlisting}
 
-O código acima pode ser usado da seguinte forma:
+O código anterior declarou a classe que pode ser utilizada da seguinte forma:
 
 \begin{lstlisting}[caption=Exemplo de utilização da classe descrita acima ]
 jonatas = Pessoa.new "Jonatas"
@@ -261,7 +266,7 @@ O bloco de código é extensamente utilizado em \textit{frameworks} para apenas 
 Shoes é um framework para a construção de interfaces rápidas. Shoes nasceu pra ser fácil. Realmente feito para iniciantes absolutos. Com esta ferramenta é realmente fácil de fazer interfaces e artes gráficas. 
 Esta ferramenta permite criar interfaces desktop para todas as plataformas e muitos divertidas de aprender.
 
-\subsection{ Exemplo de expressividade - janela com botão }
+\subsection{ Primeiro exemplo }
 
 Este é um dos exemplos mais simples do shoes. 
 
@@ -309,19 +314,14 @@ Shoes.app inicia um aplicativo do framework, e dentro do corpo deste método é 
 Como o exemplo acima mostra, o framework Shoes basicamente é uma pilha de componentes, podendo adicionar, empilhar e remover elementos com facilidade e clareza. Estes elementos quando empilhados, podem interagir apenas empilhados ou empilhados e aninhados a outras pilhas de elementos. 
 
 
-\begin{lstlisting}[caption=Primeira explicação do framework Shoes  ]
-Shoes.app :title => "Minhas Notas", :width => 480
-\end{lstlisting}
+\lstinputlisting[firstline=1, lastline=1, caption=Primeira explicação do framework Shoes]{shoes_tarefas.rb} 
 
 Estes parâmetros como título(title) e tamanho(width) são pertencentes a janela principal do aplicativo, e podem ser acompanhados de outros como bloqueio de redimensionamento de janela.
 
 Os parâmetros no formato chave e valor facilitam o uso e a extensão das possibilidades para cada elemento.
 
 Na segunda linha do código existe a declaração do elemento da interface edit\_line que é responsável pela linha de edição que permite a entrada de dados. 
-
-\begin{lstlisting}[caption=Entendendo a linha de edição]
-@anotacao = edit_line
-\end{lstlisting}
+\lstinputlisting[firstline=2, lastline=2, caption=Entendendo a linha de edição]{shoes_tarefas.rb} 
 
 Este método edit\_line retorna um componente do Shoes do tipo caixa de entrada de texto, e é possível acessar o valor do texto digitado através do atributo text. 
 
@@ -332,7 +332,93 @@ button("ver") { alert(@anotacao.text) }
 \end{lstlisting}
 
 
-\bibliographystyle{amsalpha}
+\lstinputlisting[firstline=3, lastline=9, caption=Entendendo o botão e sua ação]{shoes_tarefas.rb} 
+
+No fragmento acima, é declarado o botão que faz: 
+
+\begin{itemize} 
+  \item adicionar o que foi escrito na linha de edição para as notas (linhas 5 e 6)
+  \item cada nota adicionada deve conter um link para apagar a nota (linha 6) \ldots
+  \item limpar o texto da linha de edição da nota (linha 8)
+\end{itemize} 
+
+Traduzindo na literal a declaração do botão:
+
+\begin{lstlisting}[caption=Botão adicionar - código traduzido]
+  botao "adicionar" faz
+    @notas.adicionar faz 
+      paragrafo(@anotacao.texto + " " + 
+          link("apagar") {|nota| nota.pai.remover })
+    fim  
+    @anotacao.texto = ""
+  fim
+\end{lstlisting}
+
+Um botão adicionar \textbf{(botao "adicionar")} que faz com que, o texto da anotação \textbf{(@anotacao.texto)} seja adicionado em baixo das notas \textbf{(@notas.adicionar)} já existentes. Quando clicado no link de apagar \textbf{(link("apagar"))} aquele elemento \textbf{(nota)}, ele referencia-se a seu pai que o remove como filho \textbf{(nota.pai.remover)}, desaparecendo da pilha de anotações \textbf{(@notas)}.
+
+
+\lstinputlisting[firstline=10, lastline=10, caption=Entendendo a pilha de notas]{shoes_tarefas.rb} 
+
+Traduzindo na literal a linha 10:
+
+\begin{lstlisting}[caption=Entendendo a pilha de componentes]
+  @notas = pilha :margem => 20, :largura => 300
+\end{lstlisting}
+
+A váriavel \textbf{@notas} é igual a uma pilha de componentes shoes com margem de 20 pixels e largura de 300 pixels. Esta pilha não exibe nada na tela até que não seja adicionado nenhum elemento nela. Quando o botão adicionar for pressionado então ela é usada para adicionar o texto escrito na nota. Observe que foi usado a variável em um bloco de código antes mesmo de ela existir. Se o botão for clicado antes da pilha de notas ser criada, então o sistema lançará uma merecida excessão. 
+
+Shoes trabalha com pilhas e fluxos (\texttt{ stacks and flows }), esse conceito permite empilhar elementos e criar fluxos com outros. Eles não se misturam mas podem interagir. A pilha criada foi atribuida a váriavel \textbf{ @notas } e foi definido uma margem e uma largura para esta pilha de elementos. O processo pode funcionar recursivamente dentro desta pilha permitindo criar o mesmo fluxo interno e concatenar elementos com liberdade.
+
+\section { Linguagens de domínio específico }
+
+No domínio específico de construir telas o framework tem características que ressaltam a sua expressividade. A simplicidade de fazer um botão ter uma ação é expressiva no domínio de construir um botão com uma mensagem de alerta é muito semelhante ao exemplo a seguir\ref{exemplo botao}. Se é um botão, consequentemente terá uma mensagem e uma ação.  Em uma linha de edição (\textbf{edit\_line}) terá exatamente as propriedades de uma entrada de texto. 
+
+
+\begin{lstlisting}[label=exemplo botao, caption=Simplicidade do botão]
+botao("mensagem") { alerta("clicou no botao" } 
+\end{lstlisting}
+
+
+Para desenhar uma linguagem de domínio específico deve-se olhar para a forma mais fácil de expressar-se naquele contexto.
+Cada elemento, em seu domínio específico tem a sua forma de expressão. Por exemplo,  existem várias opções para construir uma janela, esses elementos podem ser descritos através dos parâmetros do comando. Uma janela pode ter um título, um tamanho inicial, ser redimensionável, etc.
+
+\begin{lstlisting}[label=exemplo janela, caption=Expressividade da construção de uma janela]
+janela :largura => 300, :altura => 500, 
+       :titulo => "Janela de exemplo" faz 
+
+  botao("exemplo")
+fim
+\end{lstlisting}
+
+
+Cada problema, no seu contexto, pode ser expressivo se sua terminologia estiver no domínio específico. A maioria das linguagens de programação dificulta a criação de uma terminologia dentro da própria linguagem para o domínio específico. Ruby consegue trabalhar com estas linguagens de forma mais transparente. Leandro Heuert\cite{dslLeandro}, abordou o exemplo da criação de uma receita de bolo no seu domínio específico da seguinte forma: 
+
+\begin{lstlisting}[label=exemplo janela, caption=Expressividade de uma receita no seu domínio específico\cite{dslLeandro}]
+receita {
+  nome "Bala de Pinga"
+  ingrediente 1, 'kg', 'acucar cristal'
+  ingrediente 1, 'copo', 'pinga'
+  ingrediente 2, 'copos', 'agua'
+  ingrediente 2, 'envelopes', 'gelatina incolor'
+  ingrediente 1, 'envelopes', 'gelatina vermelha'
+}
+\end{lstlisting}
+
+\subsection { Simplicidade } 
+   Os domínios específicos tornam o código estético e preciso. Matz, o criador da linguagem ruby, disse em uma entrevista a Dave Thomas que não é possível criar uma linguagem perfeita, ...... do código, colaboram para de declaração de elementos \cite{programmingRuby}
+
+\subsection { Experiência no domínio específico }:
+ Heuert conclui que quanto mais conhecido é o domínio específico, melhor será a solução para este domínio.
+\subsection { Metaprogramação } permite estender a linguagem a partir da própria linguagem.
+ Dave Thomas ressalta que uma das coisas que mais chama atenção em Ruby é a facilidade de instrospecção a linguagem. 
+\end{itemize}
+
+"pode-se facilmente que pessoas que tenham um mínimo necessário de conhecimento em linguagens de programação consigam entender o quê está acontecendo por trás de um software 
+ \cite {dslLeandro}
+
+
+
+\bibliographystyle{plainnat}
 \begin{thebibliography}{9} 
 \bibitem{wikiLinguagem} 
 Wikipédia, 
@@ -345,7 +431,9 @@ Thomas, Dave.
 Programming Ruby: The Pragmatic programmers’ Guide. 
 Segunda edição. Dallas, Texas: The Pragmatic Bookshelf, 2006.
 
+\bibitem{dslLeandro} 
 
+HEUERT, L. Linguagens Específicas de Domínio: um exemplo prático em Ruby.Francisco Beltrão: UNIPAR, 2008.
 
 \end{thebibliography} 
 

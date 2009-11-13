@@ -1,6 +1,7 @@
-\documentclass[12pt]{article}
-%\documentclass{abnt}
+%\documentclass[12pt]{article}
+\documentclass[espaco=simples,appendix=Name]{abnt}
 
+\usepackage{abntex}
 \usepackage[brazil]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf-8]{inputenc}
@@ -9,7 +10,12 @@
 \usepackage{listings}
 \usepackage[dvips]{graphicx}
 
-% \usepackage{abntex}
+\usepackage[num]{abntcite}      % citacoes do abntex
+\usepackage{tabela-simbolos}    % tabelas de simbolos do abntex
+\usepackage{dsfont}             % fonte
+\usepackage{fancyvrb}
+
+
 
 %\citeoption{abnt-full-initials=yes}
 \lstset{language=ruby,caption=Código Ruby,label=Ruby, numbers=left, frame=single} 
@@ -23,18 +29,18 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Este trabalho busca trazer ao leitor um ambiente de programação mais próximo de sua realidade. Através de exemplos de programas de computador, será mostrado como a linguagem de programação pode ser expressiva e de fácil compreensão.
+Este trabalho busca trazer ao leitor um ambiente de programação mais próximo de sua realidade. Através de exemplos de programas de computador, será mostrado como a linguagem de programação pode ser expressiva e de fácil compreensão. Com a linguagem Ruby, são abordados exemplos de uma linguagem de computador mais humana.
 \end{abstract}
 
-\tableofcontents
+%\tableofcontents
 
-\section{Teoria da linguagem}
+\chapter{Teoria da linguagem}
 
 Linguagem é qualquer e todo sistema de signos que serve de meio de comunicação de idéias ou sentimentos através de signos convencionais, sonoros, gráficos, gestuais etc., podendo ser percebida pelos diversos órgãos dos sentidos, o que leva a distinguirem-se várias espécies de linguagem: visual, auditiva, tátil, etc., ou, ainda, outras mais complexas, constituídas, ao mesmo tempo, de elementos diversos.12 Os elementos constitutivos da linguagem são, pois, gestos, sinais, sons, símbolos ou palavras, usados para representar conceitos de comunicação, idéias, significados e pensamentos. Embora os animais também se comuniquem, a linguagem propriamente dita pertence apenas ao Homem.
 
 \cite{wikiLinguagem}
 
-\section{Evolução da linguagem de programação}
+\chapter{Evolução da linguagem de programação}
 
 A evolução dos computadores trouxe dispositivos menores e mais potentes. Na década de 80, usavam-se grandes computadores para realizar pequenos processos, 30 anos mais tarde estes dispositivos ganharam velocidade, design e consomem pouca energia. Dispositivos que cabem na palma da mão, com apenas alguns toques ou cliques tornam acessível a informação desejada. 
 
@@ -44,7 +50,7 @@ A linguagem de computador, inicialmente era grosseira e de difícil compreensão
 
 Uma linguagem tem os seus limites, na maioria dos casos é formal e burocrático. A linguagem Ruby quebra esta formalidade, torna o processo de codificação simples e livre. Em outras palavras, ela não bloqueia o trabalho do programador.
 
-\subsection{Exemplo 'Hello world'}
+\section{Exemplo 'Hello world'}
 
    O programa Hello world é o programa mais conhecido no mundo inteiro e é o exemplo mais básico de uma linguagem de programação com o objetivo de imprimir a mensagem "Hello, world!" e guiar o iniciante em sua primeira compilação/execução de um programa de computador. Abaixo seguem dois exemplos "Hello, world" em duas linguagens de programação distintas: asssembly e ruby.
 
@@ -66,7 +72,7 @@ Assembly ou Assembler é uma notação escrita por humanos que permite escrever 
 Sem dificuldades, a listagem acima \ref{exemplo em assembly} demonstra-se complexa. Apenas para imprimir uma frase foram necessários 6 linhas. Essa declaração não tão amigável é usada para realizar o mesmo objetivo do comanddo abaixo \ref{exemplo hello world ruby}, apenas estão escritas de forma diferente. O fato é que os compiladores exigem uma quantidade mínima de declarações para que possa compilar e executar.
 
 
-\subsubsection {Exemplo usando a linguagem de programação ruby}
+\subsection {Exemplo usando a linguagem de programação ruby}
 
 \begin{lstlisting}[caption=Exemplo em ruby]
    print "Hello, world!"
@@ -74,7 +80,7 @@ Sem dificuldades, a listagem acima \ref{exemplo em assembly} demonstra-se comple
 
  Ruby demonstra-se mais simples nestas exigências, é possível compilar apenas uma expressão, não precisando de declarações e nem padrões repetitivos. O código possuí apenas o comando de impressão e a frase que deseja ser impressa.
 
-\subsection { A simplicidade da linguagem }
+\section { A simplicidade da linguagem }
 
 Foi necessário apenas uma linha de código para representar o mesmo exemplo na linguagem ruby. No exemplo mais simples o objetivo é apenas imprimir "Hello, world!" e é exatamente isso que está escrito. Diferente de assembly, ruby não é uma linguagem compilada e sim dinâmica. Assim, tudo acontece em tempo real, enquanto está sendo executado.
    
@@ -86,17 +92,17 @@ Apenas com uma linha de código é possível fazer exatamente o que está sendo 
 Exemplos como este, mostram o poder do homem de categorizar e generalizar as informações. Desta forma a percepção mudou de, programar para o computador para programar para as outras pessoas. Anteriormente, com uma programação rígida e a escassez de processamento, a codificação de um software realmente fazia parte de um processo árduo e lento, aonde não era possível tornar agradável a leitura de uma instrução de computador.
 
 
-\section { A linguagem ruby }
+\chapter { A linguagem ruby }
 
 Ruby é uma linguagem dinâmica, open source com foco na simplicidade e produtividade. Tem uma sintaxe elegante de leitura natural e fácil escrita. Com um grande número de bibliotecas disponíveis gratuitamente (gems), tem atraído muita gente para desenvolver nesta linguagem.
 
 Para usar no Mac OS X ou Linux, é necessário abrir o {terminal} e  no Windows pode-se usar o Command-DOS e após isso digitar ruby para invocar o compilador, irb para iniciar uma interação.
 
-\subsection { A burocracia da linguagem }
+\section { A burocracia da linguagem }
 
-Declarar e inicializar variáveis, importar pacotes, classes finais e fechadas 
+Declarar e inicializar variáveis, importar pacotes, classes finais e fechadas são fatores que interferem no trivial desenvolvimento de software. As linguagens estáticas empurram o programador a escrever mais código, forçam a declarar estruturas sem sentido por não saber lidar com o problema com alto nível.
 
-\subsection { O compilador ruby }
+\section { O compilador ruby }
 
 O compilado pode ser invocado usando a linha de comando e receber código por parâmetro compilar
 
@@ -105,7 +111,7 @@ jonatas@xonatax-mac:~$ ruby -e "puts 1+2"
 3
 \end{lstlisting}
 
-\subsection { Ruby Interativo - IRB }
+\section { Ruby Interativo - IRB }
 
 Existe um programa chamado IRB, que vem instalado com compilador de ruby, que serve para interagir com a linguagem na forma de console. As linhas do console ruby digitadas são iniciadas por >> e as linhas que trazem o resultado da expressão são iniciadas por =>. Estes símbolos não fazem parte do código de programação, apenas identificam a situação do terminal interativo.
 
@@ -117,9 +123,9 @@ jonatas@xonatax-mac:~$ irb
 => 3
 \end{lstlisting}
 
-\subsection { Tipos de dados }
+\section { Tipos de dados }
 
-\subsubsection { Strings }
+\subsection { Strings }
 
 As strings podem ser limitados por vários delimitadores, em geral são usadas aspas simples e duplas, mas existem outras formas.
 
@@ -128,7 +134,7 @@ As strings podem ser limitados por vários delimitadores, em geral são usadas a
 => " outra string mais uma outra "
 \end{lstlisting}
 
-\subsubsection { Números }
+\subsection { Números }
 
 Os números são objetos como qualquer outro e os operadores são simples métodos.
 
@@ -141,7 +147,7 @@ Os números são objetos como qualquer outro e os operadores são simples métod
 => Float
 \end{lstlisting}
 
-\subsubsection { Hashes }
+\subsection { Hashes }
 
 Este tipo de elemento que amarzena valores como uma matriz, mas é possível acessar os valores através de uma chave. O valor do elemento é indicado apartir da expressão:
 
@@ -154,7 +160,7 @@ sexo = { "M" => "Masculino", "F" => "Feminino"}
 sexo["M"] # => "Masculino"
 \end{lstlisting}
 
-\subsubsection { Entrada de dados }
+\subsection { Entrada de dados }
 
 No exemplo abaixo será feito uma pergunta para o usuário e quando ele confirmar a resposta irá saudar o usuário.
 
@@ -167,7 +173,7 @@ No exemplo abaixo será feito uma pergunta para o usuário e quando ele confirma
 Na primeira linha, é impressa a pergunta. Na próxima linha é atribuido a uma variável nome a entrada de dados dada pelo método gets.
 Em seguinda é impressa a saudação oi juntamente com a variável nome. Notem que o uso de \#\{\} embutido na string já concatena a expressão interna a string.
 
-\subsubsection { Métodos }
+\subsection { Métodos }
 
 Os métodos podem ser usados apartir de uma classe, ou estarão definidos no módulo Kernel. Métodos são formas de interagir com o ambiente atual e encapsulam a função com parâmetros.
 
@@ -241,7 +247,7 @@ jonatas = Pessoa.new "Jonatas"
 jonatas.saudar 
 \end{lstlisting}
 
-\subsubsection { Blocos de código }
+\subsection { Blocos de código }
 
 \cite{programmingRuby}
 Segundo Dave Thomas, todo mundo já quiz implementar o seu próprio recheio de método na sua própria estrutura. Um bloco pode ficar entre chaves ou entre as palavras \textit{ do } e \textit{ end }.
@@ -259,14 +265,14 @@ O bloco de código é extensamente utilizado em \textit{frameworks} para apenas 
 
 
 
-\section{ Shoes }
+\chapter{ Shoes }
 
-\subsection{O que é Shoes?}
+\section{O que é Shoes?}
 
 Shoes é um framework para a construção de interfaces rápidas. Shoes nasceu pra ser fácil. Realmente feito para iniciantes absolutos. Com esta ferramenta é realmente fácil de fazer interfaces e artes gráficas. 
 Esta ferramenta permite criar interfaces desktop para todas as plataformas e muitos divertidas de aprender.
 
-\subsection{ Primeiro exemplo }
+\section{ Primeiro exemplo }
 
 Este é um dos exemplos mais simples do shoes. 
 
@@ -285,7 +291,7 @@ Shoes roda na maioria das plataformas operacionais. Isto é ótimo pois é poss�
 %\includegraphics[scale=0.6]{shoes_hello_world.eps}
 % (exemplo rodando no Mac OS X)!
 
-\subsubsection{ Exemplo de expressividade - um bloco de notas com Shoes }
+\subsection{ Exemplo de expressividade - um bloco de notas com Shoes }
 
 Como próximo exemplo, será progamado um bloco de notas que possa apagar e inserir novas notas em uma janela. O programa será composto por:
 \begin{itemize} 
@@ -369,7 +375,7 @@ A váriavel \textbf{@notas} é igual a uma pilha de componentes shoes com margem
 
 Shoes trabalha com pilhas e fluxos (\texttt{ stacks and flows }), esse conceito permite empilhar elementos e criar fluxos com outros. Eles não se misturam mas podem interagir. A pilha criada foi atribuida a váriavel \textbf{ @notas } e foi definido uma margem e uma largura para esta pilha de elementos. O processo pode funcionar recursivamente dentro desta pilha permitindo criar o mesmo fluxo interno e concatenar elementos com liberdade.
 
-\section { Linguagens de domínio específico }
+\chapter { Linguagens de domínio específico }
 
 No domínio específico de construir telas o framework tem características que ressaltam a sua expressividade. A simplicidade de fazer um botão ter uma ação é expressiva no domínio de construir um botão com uma mensagem de alerta é muito semelhante ao exemplo a seguir\ref{exemplo botao}. Se é um botão, consequentemente terá uma mensagem e uma ação.  Em uma linha de edição (\textbf{edit\_line}) terá exatamente as propriedades de uma entrada de texto. 
 
@@ -404,19 +410,21 @@ receita {
 }
 \end{lstlisting}
 
-\subsection { Simplicidade } 
-   Os domínios específicos tornam o código estético e preciso. Matz, o criador da linguagem ruby, disse em uma entrevista a Dave Thomas que não é possível criar uma linguagem perfeita, ...... do código, colaboram para de declaração de elementos \cite{programmingRuby}
 
-\subsection { Experiência no domínio específico }:
- Heuert conclui que quanto mais conhecido é o domínio específico, melhor será a solução para este domínio.
-\subsection { Metaprogramação } permite estender a linguagem a partir da própria linguagem.
- Dave Thomas ressalta que uma das coisas que mais chama atenção em Ruby é a facilidade de instrospecção a linguagem. 
-\end{itemize}
+Os domínios específicos tornam o código estético e preciso. Matz, o criador da linguagem ruby, pergunta em uma entrevista a Dave Thomas se as linguagens influenciam o ser humano. Ele discute o que é uma boa linguagem de programação. O que proporciona na maneira de pensar, como o faz um programador melhor. Ele fala que pensa em japônes mas tem que traduzir para inglês a sua forma de pensar. Ele argumenta que não existe uma maneira de programar em japônes, a linguagem simplesmente não permite, essa não seria uma boa linguagem para explorar como uma linguagem de programação. As linguagem devem fazer você pensar melhor e faze-lo um melhor programador.\cite{programmingRuby}
 
-"pode-se facilmente que pessoas que tenham um mínimo necessário de conhecimento em linguagens de programação consigam entender o quê está acontecendo por trás de um software 
- \cite {dslLeandro}
+Em outra entrevista muito divertida \cite{entrevistaDivertidaComMatz} com Matz, ele comenta sobre a importância de aprender vários tipos de linguagem de programação. Para entender a produtividade que a linguagem pode oferecer, é necessário conhecer os bons aspectos das linguagens de script, funcionais, lógicas, etc. Aprender linguagens é uma maneira de aprender a programar. Ler códigos fontes é uma maneira de obter conhecimento e informação. Também não deve-se dar foco em ferramentas, pois elas mudam mas os algorítmos, a base fundamental não. 
+
+Ser preguiçoso é uma fonte de inspiração para programar em Ruby, as máquinas servem os homens e a elas pertence o esforço. Falando pouco e se expressando bem é possível comandar computadores com produtividade.
+
+Heuert\cite{dslLeandro} conclui que quanto mais conhecido é o domínio específico, melhor será a solução para este domínio. Uma linguagem pode ser desenhada com sucesso para o escopo, pode ser comunicativa para as pessoas e para os computadores, expressiva como os exemplos aqui apresentados.
+
+A atividade de trabalhar com a linguagem, uma forma de se comunicar com a máquina, deve ser divertida, e em primeiro lugar de homem para homem, depois de homem para máquina e por fim de máquina para máquina\cite{entrevistaDivertidaComMatz}. Em outras palavras deve iniciar por uma definição compreensiva ao homem, depois deve ser comunicado para a máquina de forma fácil, e por fim a máquina pode compreender e se preocupar com suas tarefas de máquina.
 
 
+Com uma linguagem bem desenhada, como Heuert citou "pode-se facilmente que pessoas que tenham um mínimo necessário de conhecimento em linguagens de programação consigam entender o quê está acontecendo por trás de um software"\cite{dslLeandro}. Trabalhando com elementos conhecidos na contexto do programador, é possível que mesmo sendo um iniciante, codifique sem dificuldades, já que conhece o domínio específico.
+
+A metaprogramação é o poder de estender a linguagem a partir da própria linguagem. Dave Thomas\cite{programmingRuby} ressalta que uma das coisas que mais chama atenção em Ruby é a facilidade de instrospecção a linguagem. Com este recurso é possível criar objetos dinâmicamente, é possível trabalhar com o inesperado criando métodos e classes dinâmicamente, através da própria linguagem. Também é este o recurso que mais auxilia na definição do domínio específico da linguagem a ser desenhada. 
 
 \bibliographystyle{plainnat}
 \begin{thebibliography}{9} 
@@ -435,6 +443,28 @@ Segunda edição. Dallas, Texas: The Pragmatic Bookshelf, 2006.
 
 HEUERT, L. Linguagens Específicas de Domínio: um exemplo prático em Ruby.Francisco Beltrão: UNIPAR, 2008.
 
+\bibitem{entrevistaDivertidaComMatz}
+Ruby Creator Y. Matsumoto.
+Interview by S. Ibaraki, I.S.P.
+\url{http://www.stephenibaraki.com/rubycreater122101.htm}
+
+\bibitem{entrevistaAudioComMatz}
+Matsumoto, Y.
+Ruby Design Principles
+Technometria with Phil Windley, 
+Acesso em novembro de 2009.
+\url{http://itc.conversationsnetwork.org/shows/detail1638.html}
+
+\bibitem{cantWriteAExpressiveCode}
+Gageot, D.
+We can’t write expressive code,
+Acesso em novembro de 2009.
+\url{http://blog.javabien.net/2009/01/12/can-we-really-write-expressive-code}
+
+\bibitem{rubyPhilosophy}
+Venners, B. The Philosophy of Ruby
+A Conversation with Yukihiro Matsumoto
+Acesso em novembro de 2009.
 \end{thebibliography} 
 
 \end{document}

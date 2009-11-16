@@ -1,6 +1,5 @@
 %\documentclass[12pt]{article}
 \documentclass[espaco=simples,appendix=Name]{abnt}
-
 \usepackage{abntex}
 \usepackage[brazil]{babel}
 \usepackage[T1]{fontenc}
@@ -9,14 +8,13 @@
 \usepackage{times}
 \usepackage{listings}
 \usepackage[dvips]{graphicx}
-
 \usepackage[num]{abntcite}      % citacoes do abntex
 \usepackage{tabela-simbolos}    % tabelas de simbolos do abntex
 \usepackage{dsfont}             % fonte
 \usepackage{fancyvrb}
 
 
-%\citeoption{abnt-full-initials=yes}
+\citeoption{abnt-full-initials=yes}
 \lstset{language=ruby,caption=Exemplo,label=Ruby, numbers=left, frame=single} 
 
 \title{Expressividade da linguagem enquanto programando}
@@ -28,25 +26,38 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-Este trabalho busca trazer ao leitor um ambiente de programação mais próximo de sua realidade. Através de exemplos de programas de computador, será mostrado como a linguagem de programação pode ser expressiva e de fácil compreensão. Com a linguagem Ruby, são abordados exemplos de uma linguagem de computador mais humana.
+Este trabalho busca mostrar uma linguagem de programação mais expressiva. Através de exemplos de programas de computador, será mostrado como a linguagem de programação pode ser simples e de fácil compreensão, como a linguagem Ruby aproxima-se uma linguagem de computador mais humana.
+
+Palavras-chave: linguagem, expressividade, DSL, Ruby, código expressivo.
 \end{abstract}
 
 %\tableofcontents
 
-\chapter{Teoria da linguagem}
+\chapter{Introdução}
+
+A construção de programas de computador retraí as pessoas, elas pensam que programas são complexos e difíceis de aprender. Com muitas regras e limites, a resistência ao aprendizado aumenta ainda mais. Em sua maioria, oferecem suporte apenas em inglês, tornando ainda mais desafiante para a profissão. 
+
+ Os programas crescem e tornam-se complexos. Através de técnicas de desenvolvimento e o uso de uma linguagem bem específica é possível mudar esta paisagem. Em uma análise as dificuldades que o programador encara, muitas vezes parte deste trabalho é culpa da linguagem, sua dificuldade de aprendizado e expressão.
+
+Os tempos evoluiram e será abordado uma linguagem simples, com foco nas pessoas e não nos computadores. Com o objetivo de chegar mais próximo da realidade externa a um programa de computador, é possível escrever mini-linguagens, bibliotecas bem definidas com uma sintaxe única e expressiva para realizar o seu trabalho. Ferramentas específicas realizam tarefas específicas. Fazendo a escolha certa, é possível obter um código simples, que informe exatamente a sua funcionalidade, e deixando a complexidade para camadas mais abstratas e específicas.  
+
+Uma maneira inteligente de entender coisas complexas, é quebrar em partes menores. Quando um elemento demonstra-se complexo, pode ser dividido em outros conceitos e cada um deles terá sua responsabilidade mais específica e mais simples. Existem diversas maneiras de fragmentar um problema complexo, usando uma solução criativa, é possível diminuir a dificuldade de compreensão, estabelecendo terminologias, é possível desmassificar a complexidade.\cite{NazemiExpressiveCode}
+
+Aplicando soluções simples, é possível fragmentar e unir um software complexo.
+\chapter{A linguagem}
 
 
+Linguagem não é somente as línguas, mas é uma série de outros sistemas de comunicação, notação ou cálculo, criados artificialmente pelo homem com objetivos específicos. Apesar de ser um código com regras determinadas, natural ou artificialmente, as linguagens podem ser consideradas sobre um ponto de vista comportamental, além de representarem idéias, comunicação, significados e pensamentos. \cite{linguagemLinguistica}. Embora os animais também se comuniquem, a linguagem propriamente dita pertence apenas ao Homem\cite{wikiLinguagem}.
 
-Linguagem não é somente as línguas, mas é uma série de outros sistemas de comunicação, notação ou cálculo, criados artificialmente pelo homem com objetivos específicos. As linguagens de computador, arquitetadas para facilitar o trabalho do homem em traduzir o código de máquina, muitas vezes são complexas e de difícil aprendizado.
-
-Apesar de ser um código com regras determinadas, natural ou artificialmente, as linguagens podem ser consideradas sobre um ponto de vista comportamental. \cite{linguagemLinguistica}
 
 Portanto, pode se dizer que as linguagens possuem flexibilidade e versatilidade, sendo usadas através do interesse e da vontade humana. Isso se deve à produtividade dos sistemas de linguagem, que possibilitam a construção e interpretação de novos sinais. Todos os sistemas possibilitam a seus usuários construir e compreender um número indefinido de enunciados, que jamais viram antes. Isso, por outro lado, se dá dentro dos limites estabelecidos pelas regras.
 
-As linguagens de programação estão sobre estes mesmos trilhos, conseguem ser flexíveis e estabelecer a definição de novos sinais e expressões. Este artigo abordará exemplos práticos de expressividade na programação, trará ao conhecimento do leitor uma forma produtiva de programar, analisando um domínio específico de as regras a partir de mini-linguagens internas de contextos específicos.
+As linguagens de programação estão sobre estes mesmos trilhos, conseguem ser flexíveis e estabelecer a definição de novos sinais e expressões. Este artigo abordará exemplos práticos de expressividade na programação, trará ao conhecimento do leitor uma forma produtiva de programar, analisando um domínio específico da linguagem (\textit{DSL - Domain Specified Language}), e as regras terminológicas que desenham as mini-linguagens que tornam o contexto expressivo.
 
+As linguagens de computador tem o objetivo específico de traduzir o código para linguagem de máquina. Arquitetadas para facilitar o trabalho do homem, muitas vezes se tornam complexas e de difícil aprendizado. Devido a esta deficiência, são criadas ferramentas específicas para cada área do desenvolvimento. 
 
-Os elementos constitutivos da linguagem são, pois, gestos, sinais, sons, símbolos ou palavras, usados para representar conceitos de comunicação, idéias, significados e pensamentos. Embora os animais também se comuniquem, a linguagem propriamente dita pertence apenas ao Homem. \cite{wikiLinguagem}
+Ferramentas nascem com objetivo de minimizar o esforço humano. Para codificação, existem inúmeros (\textit{Frameworks}) que seguem este objetivo. Através da abstrações de problemas comuns e adoção de soluções padronizadas, são desenhadas soluções que tornem o desenvolvimento de software produtivo.
+
 
 \chapter{Evolução da linguagem de programação}
 
@@ -97,6 +108,7 @@ Foi necessário apenas uma linha de código para representar o mesmo exemplo na 
 \end{lstlisting}
 
 Apenas com uma linha de código é possível fazer exatamente o que está sendo proposto. Este programa de computador foi escrito de forma simples e humanamente legível, diferente da primeira instrução de máquina escrita em assembly. Com poucas palavras cumpriu exatamente o objetivo do software no domínio em questão.
+
 Exemplos como este, mostram o poder do homem de categorizar e generalizar as informações. Desta forma a percepção mudou de, programar para o computador para programar para as outras pessoas. Anteriormente, com uma programação rígida e a escassez de processamento, a codificação de um software realmente fazia parte de um processo árduo e lento, onde não era possível tornar agradável a leitura de uma instrução de computador.
 
 \section { A burocracia da linguagem }
@@ -111,7 +123,8 @@ Declarar e inicializar variáveis, importar pacotes, classes finais e fechadas s
  }
 \end{lstlisting}
 
-Para ser possível executar um código em java, este código deve estar em uma classe Java, em um arquivo na extensão .java. A classe deve ser pública e deverá conter um método estático, sem retorno (\textbf{void}) com o nome \textbf main. Este método receberá como parâmetro um vetor de strings que representam os parâmetros da linha de comando. Para compilar o arquivo java, será necessário usar o compilador \textbf{javac} que então criará um arquivo com o mesmo nome do código fonte com a extensão .class, este arquivo pode ser executado usando o comando \textbf{java}. 
+Para ser possível executar um código em java, este código deve estar em uma classe Java, em um arquivo na extensão .java. A classe deve ser pública e deverá conter um método estático, sem retorno (\textbf{void}) com o nome \textbf{main}. Este método receberá como parâmetro um vetor de strings que representam os parâmetros da linha de comando. Para compilar o arquivo java, será necessário usar o compilador \textbf{javac} que então criará um arquivo com o mesmo nome do código fonte com a extensão .class, este arquivo pode ser executado usando o comando \textbf{java}. 
+
 Todos estes passos devem ser seguidos sem falhas para que o exemplo hello world seja compilado e executado usando a linguagem java. Cada detalhe deste tem um motivo e é importante em algum aspecto na linguagem, mas em muitos momentos, estes recursos se tornam desumanos e complexos, obfuscando a expressividade da linguagem.
 
 \chapter { A linguagem ruby }
@@ -256,7 +269,9 @@ end
 \subsection{ Variáveis } 
 
 Quando iniciados com apenas um arroba (@), indicam ser uma variável de instância. Diferente de Java e muitas outras linguagens, não é necessário declarar a variável antes de usa-la. Elas simplesmente criam a referência logo na primeira vez que são usadas.
+
 As variáveis locais são iniciadas por letras ou \textit{underscore}.
+
 A atribuição de um valor a uma variável é feita através do sinal de igualdade (=).
 
 \begin{lstlisting}[caption=Exemplo de variável local ]
@@ -264,6 +279,7 @@ meu_nome = "Jonatas"
 \end{lstlisting}
 
 A leitura da expressão acima seria: meu nome (a variável) é igual a Jonatas.
+
 Em uma classe, as váriaveis são usadas como atributos internos.
 
 \begin{lstlisting}[caption=Exemplo de variável de instância em uma classe ]
@@ -306,6 +322,7 @@ O bloco de código é extensamente utilizado em \textit{frameworks} para apenas 
 \section{O que é Shoes?}
 
 Shoes é um framework para a construção de interfaces rápidas. Shoes nasceu pra ser fácil. Realmente feito para iniciantes absolutos. Com esta ferramenta é realmente fácil de fazer interfaces e artes gráficas. 
+
 Esta ferramenta permite criar interfaces desktop para todas as plataformas e muitos divertidas de aprender.
 
 \section{ Primeiro exemplo }
@@ -347,6 +364,7 @@ Como próximo exemplo, será progamado um bloco de notas que possa apagar e inse
 \subsection { Funcionamento do framework }
 
 Como descrito na primeira linha de código do exemplo anterior, o framework é declarado, contendo uma janela principal. Esta janela, recebe um título e um tamanho inicial.
+
 A declaração:
 
 \lstinputlisting[caption=Um bloco de anotações com Shoes]{shoes_tarefas.rb} 
@@ -414,6 +432,7 @@ botao("mensagem") { alerta("clicou no botao" }
 
 
 Para desenhar uma linguagem de domínio específico deve-se olhar para a forma mais fácil de expressar-se naquele contexto.
+
 Cada elemento, em seu domínio específico tem a sua forma de expressão. Por exemplo,  existem várias opções para construir uma janela, esses elementos podem ser descritos através dos parâmetros do comando. Uma janela pode ter um título, um tamanho inicial, ser redimensionável, etc.
 
 \begin{lstlisting}[label=exemplo janela, caption=Expressividade da construção de uma janela]
@@ -438,9 +457,12 @@ receita {
 }
 \end{lstlisting}
 
-Os domínios específicos tornam o código estético e preciso. Yukihiro Matz Matsumoto, o criador da linguagem Ruby, pergunta em uma entrevista a Dave Thomas se as linguagens influenciam o ser humano. Ele discute o que é uma boa linguagem de programação. O que proporciona na maneira de pensar, como o faz um programador melhor. Sendo japônes, logo pensa em japônes mas tem que traduzir para inglês a sua forma de pensar. Ele argumenta que não existe uma maneira de programar em japônes, a linguagem simplesmente não permite, essa não seria uma boa linguagem para explorar como uma linguagem de programação. As linguagens devem fazer você pensar melhor e faze-lo um melhor programador.\cite{programmingRuby}
+Os domínios específicos tornam o código estético e preciso. Yukihiro Matz Matsumoto, o criador da linguagem Ruby, pergunta em uma entrevista a Dave Thomas se as linguagens influenciam o ser humano. Ele discute o que é uma boa linguagem de programação, que maneira muda sua forma de pensar e como o faz um programador melhor.
 
-Em outra entrevista muito divertida \cite{entrevistaDivertidaComMatz} com Matz, ele comenta sobre a importância de aprender vários tipos de linguagem de programação. Para entender a produtividade que a linguagem pode oferecer, é necessário conhecer os bons aspectos das linguagens de script, funcionais, lógicas, etc. Aprender linguagens é uma maneira de aprender a programar. Ler códigos fontes é uma maneira de obter conhecimento e informação. Também não deve-se dar foco em ferramentas, pois elas mudam. O importante é conhecer a base fundamental dos algorítmos.
+Como japônes, logo pensa em japônes mas tem que traduzir para inglês a sua forma de pensar. Ele argumenta que não existe uma maneira de programar em japônes, a linguagem simplesmente não permite, essa não seria uma boa linguagem para explorar como uma linguagem de programação. As linguagens devem fazer você pensar melhor e faze-lo um melhor programador.\cite{programmingRuby}
+
+
+Em outra entrevista \cite{entrevistaDivertidaComMatz} com Matz, ele comenta sobre a importância de aprender vários tipos de linguagem de programação. Para entender a produtividade que a linguagem pode oferecer, é necessário conhecer os bons aspectos das linguagens de script, funcionais, lógicas, etc. Aprender linguagens é uma maneira de aprender a programar. Ler códigos fontes é uma maneira de obter conhecimento e informação. Também não deve-se dar foco em ferramentas, pois elas mudam. O importante é conhecer a base fundamental dos algorítmos.
 
 Ser preguiçoso é uma fonte de inspiração para programar em Ruby, as máquinas servem os homens e a elas pertence o esforço. Falando pouco e se expressando bem é possível comandar computadores com produtividade.
 
@@ -451,8 +473,53 @@ A atividade de trabalhar com a linguagem, uma forma de se comunicar com a máqui
 
 Com uma linguagem bem desenhada, como Heuert citou "pode-se facilmente que pessoas que tenham um mínimo necessário de conhecimento em linguagens de programação consigam entender o quê está acontecendo por trás de um software"\cite{dslLeandro}. Trabalhando com elementos conhecidos na contexto do programador, é possível que mesmo sendo um iniciante, codifique sem dificuldades, já que conhece o domínio específico.
 
+Existe um framework muito utilizado pelos programadores ruby, chamado ActiveRecord. Este framework tem o objetivo de encapsular o mapeamento objeto-relacional que permite a persistência de objetos em banco de dados e conversão de um registro de uma tabela para um objeto. O exemplo a seguir\ref{exemplo activerecord} faz uma busca por um usuário ativo do sistema que possua o login igual a 'jonatas'.
+
+\begin{lstlisting}[label=exemplo activerecord, caption=Exemplo de busca com o framework ActiveRecord]
+User.active.find_by_login("jonatas")
+\end{lstlisting}
+
+Traduzindo na literal tem-se:
+\begin{lstlisting}[label=exemplo activerecord traduzido, caption=Exemplo traduzido de busca com o framework ActiveRecord]
+Usuario.ativo.busca_por_login("jonatas")
+\end{lstlisting}
+
+A expressão acima\ref{exemplo activerecord} irá executar uma consulta no banco de dados que fará o filtro necessário pelo login e por usuários ativos e trará o objeto instanciado se algum registro for encontrado. 
+Com este framework também é possível mapear relacionamentos entre outros objetos agregados.
+
+\begin{lstlisting}[label=exemplo classe extendida activerecord, caption=Exemplo de classe extendida do ActiveRecord]
+class NotaFiscal < ActiveRecord::Base
+  validates_uniqueness_of :numero
+  validates_presence_of :cliente
+
+  belongs_to :cliente
+  has_many :itens
+end
+\end{lstlisting}
+
+Quando uma classe é estendida do framework ActiveRecord, abre-se uma gama de métodos específicos para indicar os relacionamentos existentes, validar, filtrar, inserir, alterar atributos ou excluir. Também é possível criar observadores para diversos pontos e estados do objeto. Traduzindo a listagem anterior tem-se a seguinte declaração:
+
+\begin{lstlisting}[label=exemplo classe extendida activerecord traduzido, caption=Exemplo de classe do ActiveRecord traduzida]
+class NotaFiscal < ActiveRecord::Base
+  validar_unicidade_do :numero
+  validar_presenca_do :cliente
+
+  tem_muitos :produtos
+  pertence_a :vendedor
+end
+\end{lstlisting}
+
+Em um software determinado, da-se uma nota fiscal, que terá um número único, não permitirá ser lançada sem um cliente, terá muitos produtos e pertence a um vendedor. O exemplo acima apresenta dois tipos de métodos mapeadores das associações e os validadores.
+
 A metaprogramação é o poder de estender a linguagem a partir da própria linguagem. Dave Thomas\cite{programmingRuby} ressalta que uma das coisas que mais chama atenção em Ruby é a facilidade de instrospecção à linguagem. Com este recurso é possível criar objetos dinâmicamente, é possível trabalhar com o inesperado criando métodos e classes dinâmicamente, através da própria linguagem. Também é este o recurso que mais auxilia na definição do domínio específico da linguagem a ser desenhada. 
 
+
+\chapter {Considerações finais}
+
+A programação de computadores é um trabalho árduo e de difícil compreensão. Mas quando localizado em um domínio específico, pode-se apresentar simples e com fácil manutenção. A programação torna-se fácil, quando existe clareza nos objetivos e expressividade na linguagem escolhida. O conhecimento das regras e recursos da linguagem é crucial para obter resultados realmente expressivos. 
+
+%Pode-se criar um mundo dentro de outro e torná-lo tão grande quanto o primeiro, tão preciso quanto o seu contexto e útil para seu usuário como um escravo incansável. Nesse momento existe a satisfação pelo trabalho executado.
+A escolha das premissas e da terminologia no domínio específico não dependem apenas da escolha do programador que irá arquitetar a solução mas também dos recursos que a linguagem oferece. Ruby destaca-se na simplicidade de programar, na facilidade de impôr limites e desenhar linguagens internamente. Com os recursos aqui exemplificados é possível escolher boas ferramentas, codificar com expressividade, escolher nomes convenientes e criar códigos de máquina mais humanos.
 
 
 \bibliographystyle{plainat}
@@ -473,10 +540,16 @@ HEUERT, L.
 Linguagens Específicas de Domínio: um exemplo prático em Ruby.
 Francisco Beltrão: UNIPAR, 2008.
 
+\bibitem{agileRails} 
+Thomas, Dave; Hansson, David Heinemeier.
+Agile Web Development with Rails 
+Second Edition.  Dallas, Texas: The Pragmatic Bookshelf, 2007.
+
 \bibitem{entrevistaDivertidaComMatz}
-Ruby Creator Y. Matsumoto.
-Interview by S. Ibaraki, I.S.P.
+Ruby Creator Yukihiro Matsumoto.
+Interview by Stephen Ibaraki, I.S.P.
 \url{http://www.stephenibaraki.com/rubycreater122101.htm}
+Acesso em novembro de 2009.
 
 \bibitem{entrevistaAudioComMatz}
 Matsumoto, Y.
@@ -487,7 +560,7 @@ Acesso em novembro de 2009.
 \url{http://itc.conversationsnetwork.org/shows/detail1638.html}
 
 \bibitem{cantWriteAExpressiveCode}
-Gageot, D.
+Gageot, David.
 We can’t write expressive code,
 Acesso em novembro de 2009.
 \url{http://blog.javabien.net/2009/01/12/can-we-really-write-expressive-code}
@@ -495,14 +568,22 @@ Acesso em novembro de 2009.
 \bibitem{rubyPhilosophy}
 Venners, B. The Philosophy of Ruby
 A Conversation with Yukihiro Matsumoto
+\url{http://www.artima.com/intv/ruby.html}
 Acesso em novembro de 2009.
 
 \bibitem{linguagemLinguistica}
-Lyons, J.
+Lyons, John.
 Linguagem e Linguística,
 Inglaterra: Universidade de Sussex, 1981.
 % Tradução
 % Marilda Winkler Averbug
+
+\bibitem{NazemiExpressiveCode}
+Nazemi, Kate.
+Expressive Code
+Massachusetts College of Art and Design, 2005.
+
+\url{http://www.dynamicmediainstitute.org/projects/expressive-code}
 
 \end{thebibliography} 
 

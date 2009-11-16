@@ -16,4 +16,5 @@ Shoes.app :title => "Minhas Notas", :width => 300, :resizable => false do
 
   # uma lista de notas que deve conter
   @notas = stack :margin => 20, :with => 300
+    # adicionar o que foi escrito na linha de edição para as notas abaixo listadas
 end

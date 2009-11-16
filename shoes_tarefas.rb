@@ -1,11 +1,11 @@
-Shoes.app :title => "Minhas Tarefas", :width => 300 do 
+Shoes.app :title => "Minhas Tarefas", :width => 300 {
   @anotacao = edit_line
-  button "adicionar" do
-    @notas.append do 
+  button "adicionar" {
+    @notas.append {
       para(@anotacao.text + " " +  
            link("apagar") {|nota| nota.parent.remove })
-    end
+    } 
     @anotacao.text = ""
-  end
+  }
   @notas = stack :margin => 20, :width => 300
-end
+}
